@@ -1,0 +1,9 @@
+
+# 0 or 1
+DEBUG=1
+
+# 0 or 1
+PRODUCTION=1
+
+# example : https://alireza10up.ir
+BASE_URL=localhost:8585
