@@ -4,22 +4,36 @@ namespace App\Controllers;
 
 use App\Controllers\Contracts\AbstractBaseController;
 use App\Core\Http\Request;
+use App\Exceptions\ApiException;
+use App\Services\LocationServices\NeshanLocationService;
+use App\Utils\Config;
 
 class LocationServiceController extends AbstractBaseController
 {
-    public function index(Request $request): void
+    public function index(Request $request, $term, $lat, $lng): void
     {
-        $config = env("PRODUCTION", true) ? [] : [
-            'curl' => [
-                CURLOPT_SSL_VERIFYHOST => false,
-                CURLOPT_SSL_VERIFYPEER => false,
-            ]
-        ];
+        try {
+            $locationProvider = new NeshanLocationService(new Config());
 
-        $client = new \GuzzleHttp\Client($config);
+            $result = $locationProvider->searchMap($term, $lat, $lng);
 
-        $response = $client->request('get', 'https://alireza10up.ir/');
+            $this->jsonResponse(array_merge(['status' => true], $result), 200);
+        } catch (ApiException $e) {
 
-        $this->jsonResponse(['status' => true, 'method' => $request->params(), 'message' => 'success response'], 201);
+            $this->jsonResponse([
+                'status' => false,
+                'message' => $e->getMessage(),
+                'apiStatusCode' => $e->getStatusCode()
+            ], 400);
+
+        } catch (\Exception $e) {
+
+            $this->jsonResponse([
+                'status' => false,
+                'message' => 'An unexpected error has occurred',
+            ], 500);
+
+        }
     }
+
 }

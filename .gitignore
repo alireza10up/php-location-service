@@ -2,4 +2,4 @@
 .idea/*
 vendor/
 vendor/*
-config/.env
+.env
