@@ -1,0 +1,71 @@
+\doxysection{Config Class Reference}
+\hypertarget{class_app_1_1_utils_1_1_config}{}\label{class_app_1_1_utils_1_1_config}\index{Config@{Config}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_app_1_1_utils_1_1_config_af315f08a18efa129cf90b88a4cd9a94d}{get\+File\+Content}} (string \$filename)
+\item 
+static \mbox{\hyperlink{class_app_1_1_utils_1_1_config_ab951ef58d21d3904bd15b5d6e185a5e6}{get}} (string \$filename, string \$key=null)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_app_1_1_utils_1_1_config_ab951ef58d21d3904bd15b5d6e185a5e6}\label{class_app_1_1_utils_1_1_config_ab951ef58d21d3904bd15b5d6e185a5e6} 
+\index{Config@{Config}!get@{get}}
+\index{get@{get}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily static get (\begin{DoxyParamCaption}\item[{string}]{\$filename,  }\item[{string}]{\$key = {\ttfamily null} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Retrieves a configuration value from a file.
+
+This method first calls {\ttfamily get\+File\+Content} to read the contents of the specified configuration file. It then\+:
+
+
+\begin{DoxyItemize}
+\item If {\ttfamily \$key} is null, returns the entire configuration as an associative array.
+\item If {\ttfamily \$key} is provided, it retrieves the value associated with that key from the configuration array. If the key does not exist, it returns {\ttfamily null}.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$filename} & The name of the configuration file without the {\ttfamily .php} extension \\
+\hline
+string | null & {\em \$key} & (optional) The key of the configuration value to retrieve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed The configuration value associated with the key, or the entire configuration as an array if no key is provided. If the key is not found, returns {\ttfamily null}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Config\+File\+Not\+Found\+Exception} & If the configuration file is not found \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_app_1_1_utils_1_1_config_af315f08a18efa129cf90b88a4cd9a94d}\label{class_app_1_1_utils_1_1_config_af315f08a18efa129cf90b88a4cd9a94d} 
+\index{Config@{Config}!getFileContent@{getFileContent}}
+\index{getFileContent@{getFileContent}!Config@{Config}}
+\doxysubsubsection{\texorpdfstring{getFileContent()}{getFileContent()}}
+{\footnotesize\ttfamily static get\+File\+Content (\begin{DoxyParamCaption}\item[{string}]{\$filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Reads the contents of a configuration file.
+
+This method attempts to locate and read the contents of a configuration file stored in the {\ttfamily configs} directory relative to the base path defined by {\ttfamily BASE\+\_\+\+PATH}.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$filename} & The name of the configuration file without the {\ttfamily .php} extension \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Config\+File\+Not\+Found\+Exception} & If the configuration file is not found \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+array The contents of the configuration file as an associative array 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+App/\+Utils/Config.\+php\end{DoxyCompactItemize}

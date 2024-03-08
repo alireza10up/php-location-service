@@ -1,0 +1,47 @@
+\doxysection{Location\+Service\+Controller Class Reference}
+\hypertarget{class_app_1_1_controllers_1_1_location_service_controller}{}\label{class_app_1_1_controllers_1_1_location_service_controller}\index{LocationServiceController@{LocationServiceController}}
+Inheritance diagram for Location\+Service\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_app_1_1_controllers_1_1_location_service_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_app_1_1_controllers_1_1_location_service_controller_ab567a949f50e20ea3d95ad062a17e3c3}\label{class_app_1_1_controllers_1_1_location_service_controller_ab567a949f50e20ea3d95ad062a17e3c3} 
+{\bfseries index} (\mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_request}{Request}} \$request)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Searches for locations using a provided term, latitude, and longitude.
+
+This endpoint utilizes the Neshan location API to search for locations based on the provided parameters. It returns a JSON response with the search results.
+
+
+\begin{DoxyParams}[1]{Parameters}
+Request & {\em \$request} & The HTTP request object. \\
+\hline
+string & {\em \$term} & The search term to use for location lookup. \\
+\hline
+float & {\em \$lat} & The latitude coordinate. \\
+\hline
+float & {\em \$lng} & The longitude coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If an unexpected error occurs. \\
+\hline
+{\em Api\+Exception} & If an error occurs during the API call. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+App/\+Controllers/Location\+Service\+Controller.\+php\end{DoxyCompactItemize}
