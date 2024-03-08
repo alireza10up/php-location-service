@@ -1,0 +1,12 @@
+
+# 0 or 1
+DEBUG=1
+
+# 0 or 1
+PRODUCTION=0
+
+# example : https://alireza10up.ir
+BASE_URL=localhost:8585
+
+# api key neshan
+NESHAN_API_KEY=

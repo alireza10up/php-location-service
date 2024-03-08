@@ -1,0 +1,59 @@
+\doxysection{Validators Class Reference}
+\hypertarget{class_app_1_1_utils_1_1_validators}{}\label{class_app_1_1_utils_1_1_validators}\index{Validators@{Validators}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_app_1_1_utils_1_1_validators_a7e4a164979c4e14baa03c93e74e9299d}{validate\+Location}} (array \$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_app_1_1_utils_1_1_validators_a7e4a164979c4e14baa03c93e74e9299d}\label{class_app_1_1_utils_1_1_validators_a7e4a164979c4e14baa03c93e74e9299d} 
+\index{Validators@{Validators}!validateLocation@{validateLocation}}
+\index{validateLocation@{validateLocation}!Validators@{Validators}}
+\doxysubsubsection{\texorpdfstring{validateLocation()}{validateLocation()}}
+{\footnotesize\ttfamily static validate\+Location (\begin{DoxyParamCaption}\item[{array}]{\$data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Validates a location search request data.
+
+This method performs validation on a provided location search request data array. It checks for the following\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily term}\+:
+\begin{DoxyItemize}
+\item Required (Not\+Blank)
+\item Minimum length of 3 characters (Length)
+\item Only contains letters, numbers, spaces, Arabic characters, and percent symbol (Regex)
+\end{DoxyItemize}
+\item {\ttfamily lat}\+:
+\begin{DoxyItemize}
+\item Optional
+\item Maximum length of 15 characters (Length)
+\item If present, must be a valid floating-\/point number (Regex)
+\end{DoxyItemize}
+\item {\ttfamily lng}\+:
+\begin{DoxyItemize}
+\item Optional
+\begin{DoxyItemize}
+\item Maximum length of 15 characters (Length)
+\end{DoxyItemize}
+\item If present, must be a valid floating-\/point number (Regex)
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+The method returns an associative array containing validation errors for each invalid field.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & The location search request data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array An associative array containing validation errors for each invalid field, or an empty array if valid. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+App/\+Utils/Validators.\+php\end{DoxyCompactItemize}

@@ -1,0 +1,125 @@
+\doxysection{Neshan\+Location\+Service Class Reference}
+\hypertarget{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service}{}\label{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service}\index{NeshanLocationService@{NeshanLocationService}}
+Inheritance diagram for Neshan\+Location\+Service\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_acf215f34a917d014776ce684a9ee8909}{\$url}} = \$config\mbox{[}\textquotesingle{}url\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_a12661b2fc0f57f97e30a1620889ce9c6}\label{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_a12661b2fc0f57f97e30a1620889ce9c6} 
+{\bfseries \$method} = \$config\mbox{[}\textquotesingle{}method\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_afe68e6fbe7acfbffc0af0c84a1996466}{\$params}}
+\item 
+\Hypertarget{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_a52500036ee807241b8b4b7e2367c49ef}\label{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_a52500036ee807241b8b4b7e2367c49ef} 
+{\bfseries \$headers} = \$config\mbox{[}\textquotesingle{}headers\textquotesingle{}\mbox{]}
+\item 
+\Hypertarget{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_a81e559315608713df5796ec88c44137a}\label{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_a81e559315608713df5796ec88c44137a} 
+{\bfseries return} \mbox{[}\textquotesingle{}url\textquotesingle{}=$>$ \$url, \textquotesingle{}method\textquotesingle{}=$>$ \$method, \textquotesingle{}params\textquotesingle{}=$>$ \$params, \textquotesingle{}headers\textquotesingle{}=$>$ \$headers,\mbox{]}
+\item 
+\mbox{\hyperlink{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_a3534aad5729a07571f2cbb41e3782e7b}{\$http\+Client}} = new \textbackslash{}Guzzle\+Http\textbackslash{}\+Client(\$config)
+\item 
+\mbox{\hyperlink{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_abe4cc9788f52e49485473dc699537388}{try}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interface_app_1_1_services_1_1_location_services_1_1_contracts_1_1_location_service_interface}{Location\+Service\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries call\+Api} (array \$request)
+\item 
+{\bfseries create\+Request} (string \$api, string \$term, float \$lat, float \$lng)
+\item 
+{\bfseries search\+Map} (string \$term, float \$lat, float \$lng)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_a3534aad5729a07571f2cbb41e3782e7b}\label{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_a3534aad5729a07571f2cbb41e3782e7b} 
+\index{NeshanLocationService@{NeshanLocationService}!\$httpClient@{\$httpClient}}
+\index{\$httpClient@{\$httpClient}!NeshanLocationService@{NeshanLocationService}}
+\doxysubsubsection{\texorpdfstring{\$httpClient}{\$httpClient}}
+{\footnotesize\ttfamily \$http\+Client = new \textbackslash{}Guzzle\+Http\textbackslash{}\+Client(\$config)}
+
+Makes a call to the Neshan API with a provided request.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$request} & Request details including URL, method, parameters, and headers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Decoded response data from the Neshan API 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Api\+Exception} & If an API error occurs \\
+\hline
+{\em Runtime\+Exception\texorpdfstring{$\vert$}{|}\+Guzzle\+Exception} & If an unexpected exception occurs \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_afe68e6fbe7acfbffc0af0c84a1996466}\label{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_afe68e6fbe7acfbffc0af0c84a1996466} 
+\index{NeshanLocationService@{NeshanLocationService}!\$params@{\$params}}
+\index{\$params@{\$params}!NeshanLocationService@{NeshanLocationService}}
+\doxysubsubsection{\texorpdfstring{\$params}{\$params}}
+{\footnotesize\ttfamily \$params}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'term'}\ =>\ \$term,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'lat'}\ =>\ \$lat,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'lng'}\ =>\ \$lng,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ]}
+
+\end{DoxyCode}
+\Hypertarget{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_acf215f34a917d014776ce684a9ee8909}\label{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_acf215f34a917d014776ce684a9ee8909} 
+\index{NeshanLocationService@{NeshanLocationService}!\$url@{\$url}}
+\index{\$url@{\$url}!NeshanLocationService@{NeshanLocationService}}
+\doxysubsubsection{\texorpdfstring{\$url}{\$url}}
+{\footnotesize\ttfamily \$url = \$config\mbox{[}\textquotesingle{}url\textquotesingle{}\mbox{]}}
+
+Creates a request for the Neshan API based on provided details.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$api} & Name of the Neshan API (e.\+g., "{}search"{}) \\
+\hline
+string & {\em \$term} & Search term \\
+\hline
+float | null & {\em \$lat} & Latitude \\
+\hline
+float | null & {\em \$lng} & Longitude \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array Request details including URL, method, parameters, and headers 
+\end{DoxyReturn}
+\Hypertarget{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_abe4cc9788f52e49485473dc699537388}\label{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_abe4cc9788f52e49485473dc699537388} 
+\index{NeshanLocationService@{NeshanLocationService}!try@{try}}
+\index{try@{try}!NeshanLocationService@{NeshanLocationService}}
+\doxysubsubsection{\texorpdfstring{try}{try}}
+{\footnotesize\ttfamily try}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \$response\ =\ \mbox{\hyperlink{class_app_1_1_services_1_1_location_services_1_1_neshan_location_service_a3534aad5729a07571f2cbb41e3782e7b}{\$httpClient}}-\/>request(}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$request[\textcolor{stringliteral}{'method'}],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$request[\textcolor{stringliteral}{'url'}],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'query'}\ =>\ \$request[\textcolor{stringliteral}{'params'}],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'headers'}\ =>\ \$request[\textcolor{stringliteral}{'headers'}],}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+App/\+Services/\+Location\+Services/Neshan\+Location\+Service.\+php\end{DoxyCompactItemize}

@@ -1,0 +1,229 @@
+\doxysection{Response Class Reference}
+\hypertarget{class_app_1_1_core_1_1_http_1_1_response}{}\label{class_app_1_1_core_1_1_http_1_1_response}\index{Response@{Response}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_a96c1b6d33771ac4bcf6ba87d2f45ae8b}{with\+Status\+Code}} (int \$code)
+\item 
+\mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_a094778dd1c04fe44626000b47ea0c0bb}{get\+Status\+Code}} ()
+\item 
+\mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_aa915ca97ba5e73dae619c57e3d39508e}{with\+Header}} (string \$name, string \$value)
+\item 
+\mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_ae77052963ecb5f2022a6eee04e32f649}{without\+Header}} (string \$name)
+\item 
+\mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_a379e72cc6db32de5ec98c669fd5fbca2}{with\+Text}} (string \$text)
+\item 
+\mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_ad3850357c6a740c3e64ae8a08339f22b}{with\+Json}} (array \$data)
+\item 
+\mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_a46de2d917a9e3e77985558fc5c6cb3c9}{with\+File}} (string \$file\+Path)
+\item 
+\mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_aadea4dc2cef3d2e22440a417b09e6304}{with\+Redirect}} (string \$url)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_ac93fbec81f07e5d15f80db907e63dc10}{get\+Instance}} ()
+\item 
+static \mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_a239b1c70258014a86569483c2d009de6}{create}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_app_1_1_core_1_1_http_1_1_response_a983a86eb687e5e984e5101ac9b42b092}{foreach}} ( \$this-\/$>$headers as \$name=$>$ \$value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Immutable Response class to manage HTTP responses. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_a095c5d389db211932136b53f25f39685}\label{class_app_1_1_core_1_1_http_1_1_response_a095c5d389db211932136b53f25f39685} 
+\index{Response@{Response}!\_\_construct@{\_\_construct}}
+\index{\_\_construct@{\_\_construct}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{\_\_construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Singleton\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_a239b1c70258014a86569483c2d009de6}\label{class_app_1_1_core_1_1_http_1_1_response_a239b1c70258014a86569483c2d009de6} 
+\index{Response@{Response}!create@{create}}
+\index{create@{create}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Creates a new Response instance.
+
+\begin{DoxyReturn}{Returns}
+self 
+\end{DoxyReturn}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_ac93fbec81f07e5d15f80db907e63dc10}\label{class_app_1_1_core_1_1_http_1_1_response_ac93fbec81f07e5d15f80db907e63dc10} 
+\index{Response@{Response}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the single instance of the Response class.
+
+This method implements the Singleton pattern to ensure only one instance of the Response class exists throughout the application.
+
+\begin{DoxyReturn}{Returns}
+Response The single instance of the Response class 
+\end{DoxyReturn}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_a094778dd1c04fe44626000b47ea0c0bb}\label{class_app_1_1_core_1_1_http_1_1_response_a094778dd1c04fe44626000b47ea0c0bb} 
+\index{Response@{Response}!getStatusCode@{getStatusCode}}
+\index{getStatusCode@{getStatusCode}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{getStatusCode()}{getStatusCode()}}
+{\footnotesize\ttfamily get\+Status\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the status code.
+
+\begin{DoxyReturn}{Returns}
+int The status code 
+\end{DoxyReturn}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_a46de2d917a9e3e77985558fc5c6cb3c9}\label{class_app_1_1_core_1_1_http_1_1_response_a46de2d917a9e3e77985558fc5c6cb3c9} 
+\index{Response@{Response}!withFile@{withFile}}
+\index{withFile@{withFile}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{withFile()}{withFile()}}
+{\footnotesize\ttfamily with\+File (\begin{DoxyParamCaption}\item[{string}]{\$file\+Path }\end{DoxyParamCaption})}
+
+Sets the response content as a file.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$file\+Path} & The path to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+self 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\+Not\+Found\+Exception} & If the file does not exist \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_aa915ca97ba5e73dae619c57e3d39508e}\label{class_app_1_1_core_1_1_http_1_1_response_aa915ca97ba5e73dae619c57e3d39508e} 
+\index{Response@{Response}!withHeader@{withHeader}}
+\index{withHeader@{withHeader}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{withHeader()}{withHeader()}}
+{\footnotesize\ttfamily with\+Header (\begin{DoxyParamCaption}\item[{string}]{\$name,  }\item[{string}]{\$value }\end{DoxyParamCaption})}
+
+Sets a header.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & The header name \\
+\hline
+string & {\em \$value} & The header value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+self 
+\end{DoxyReturn}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_ad3850357c6a740c3e64ae8a08339f22b}\label{class_app_1_1_core_1_1_http_1_1_response_ad3850357c6a740c3e64ae8a08339f22b} 
+\index{Response@{Response}!withJson@{withJson}}
+\index{withJson@{withJson}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{withJson()}{withJson()}}
+{\footnotesize\ttfamily with\+Json (\begin{DoxyParamCaption}\item[{array}]{\$data }\end{DoxyParamCaption})}
+
+Sets the response content as JSON.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & The data to be encoded as JSON \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+self 
+\end{DoxyReturn}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_ae77052963ecb5f2022a6eee04e32f649}\label{class_app_1_1_core_1_1_http_1_1_response_ae77052963ecb5f2022a6eee04e32f649} 
+\index{Response@{Response}!withoutHeader@{withoutHeader}}
+\index{withoutHeader@{withoutHeader}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{withoutHeader()}{withoutHeader()}}
+{\footnotesize\ttfamily without\+Header (\begin{DoxyParamCaption}\item[{string}]{\$name }\end{DoxyParamCaption})}
+
+Removes a header.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & The header name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+self 
+\end{DoxyReturn}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_aadea4dc2cef3d2e22440a417b09e6304}\label{class_app_1_1_core_1_1_http_1_1_response_aadea4dc2cef3d2e22440a417b09e6304} 
+\index{Response@{Response}!withRedirect@{withRedirect}}
+\index{withRedirect@{withRedirect}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{withRedirect()}{withRedirect()}}
+{\footnotesize\ttfamily with\+Redirect (\begin{DoxyParamCaption}\item[{string}]{\$url }\end{DoxyParamCaption})}
+
+Sets a redirect header.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$url} & The redirect URL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+self 
+\end{DoxyReturn}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_a96c1b6d33771ac4bcf6ba87d2f45ae8b}\label{class_app_1_1_core_1_1_http_1_1_response_a96c1b6d33771ac4bcf6ba87d2f45ae8b} 
+\index{Response@{Response}!withStatusCode@{withStatusCode}}
+\index{withStatusCode@{withStatusCode}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{withStatusCode()}{withStatusCode()}}
+{\footnotesize\ttfamily with\+Status\+Code (\begin{DoxyParamCaption}\item[{int}]{\$code }\end{DoxyParamCaption})}
+
+Sets the status code.
+
+
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$code} & The status code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+self 
+\end{DoxyReturn}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_a379e72cc6db32de5ec98c669fd5fbca2}\label{class_app_1_1_core_1_1_http_1_1_response_a379e72cc6db32de5ec98c669fd5fbca2} 
+\index{Response@{Response}!withText@{withText}}
+\index{withText@{withText}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{withText()}{withText()}}
+{\footnotesize\ttfamily with\+Text (\begin{DoxyParamCaption}\item[{string}]{\$text }\end{DoxyParamCaption})}
+
+Sets the response content as text.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$text} & The text content \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+self 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{class_app_1_1_core_1_1_http_1_1_response_a983a86eb687e5e984e5101ac9b42b092}\label{class_app_1_1_core_1_1_http_1_1_response_a983a86eb687e5e984e5101ac9b42b092} 
+\index{Response@{Response}!foreach@{foreach}}
+\index{foreach@{foreach}!Response@{Response}}
+\doxysubsubsection{\texorpdfstring{foreach}{foreach}}
+{\footnotesize\ttfamily foreach(\$this-\/$>$headers as \$name=$>$ \$value)}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ http\_response\_code(\$this-\/>statusCode)}
+
+\end{DoxyCode}
+Sends the response. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+App/\+Core/\+Http/Response.\+php\end{DoxyCompactItemize}
