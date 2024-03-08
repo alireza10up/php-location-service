@@ -12,7 +12,7 @@ class LocationMiddleware implements MiddlewareInterface
 
     #[\Override] public function handle(Request $request, array $params = null)
     {
-        $errors = Validators::validateLocation($params);
+        $errors = Validators::validateLocation($request->params());
         if (!empty($errors)) {
             $response = Response::getInstance();
             $response->withStatusCode(422)->withJson(['status' => false, 'message' => 'validation error', 'errors' => $errors])->send();
