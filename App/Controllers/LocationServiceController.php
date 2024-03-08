@@ -27,7 +27,6 @@ class LocationServiceController extends AbstractBaseController
             ], 400);
 
         } catch (\Exception $e) {
-
             $this->jsonResponse([
                 'status' => false,
                 'message' => 'An unexpected error has occurred',

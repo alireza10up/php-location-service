@@ -41,14 +41,14 @@ final class Router
         # uri not exists 404
         if (is_null($this->current_route)) $this->dispatch404();
         # dispatching middleware
-        if (!is_null($this->current_route['middlewares'])) $this->dispatchMiddlewares($this->current_route['middlewares']);
+        if (!is_null($this->current_route['middlewares'])) $this->dispatchMiddlewares($this->current_route);
         # dispatching
         $this->dispatch($this->current_route);
     }
 
     private function routeRegexMatched($route): bool|array
     {
-        $pattern = '/^' . str_replace(['/', '{', '}'], ['\/', '(?<', '>[-%\w]+)'], $route['uri']) . '$/';
+        $pattern = '/^' . str_replace(['/', '{', '}'], ['\/', '(?<', '>[-%\w.]+)'], $route['uri']) . '$/';
         if (preg_match($pattern, $this->request->uri(), $matches)) {
             # append matched in route
             foreach ($matches as $key => $value) {
@@ -59,9 +59,9 @@ final class Router
         return false;
     }
 
-    private function dispatchMiddlewares($middlewares): void
+    private function dispatchMiddlewares($route): void
     {
-        foreach ($middlewares as $middleware) {
+        foreach ($route['middlewares'] as $middleware) {
             # middleware : null
             if (empty($middleware)) return;
             # middleware : closure
@@ -74,7 +74,7 @@ final class Router
             # check method handle exist
             if (!method_exists($middleware, 'handle')) throw new ClassResolutionException('Method ' . 'handle' . ' Not Exits In Class ' . $middleware);
             # execute middleware
-            (new $middleware)->handle($this->request);
+            (new $middleware)->handle($this->request, $route['params'] ?? null);
         }
     }
 

@@ -64,14 +64,7 @@ class NeshanLocationService implements LocationServiceInterface
                 ]
             );
 
-            $responseData = json_decode($response->getBody()->getContents(), true);
-
-            if (!$response->getStatusCode() === 200) {
-                throw new ApiException($responseData['message'], $responseData['code']);
-            }
-
-            return $responseData;
-
+            return json_decode($response->getBody()->getContents(), true);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             $response = $e->getResponse();
             $responseData = json_decode($response->getBody()->getContents(), true);
