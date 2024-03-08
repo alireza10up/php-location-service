@@ -22,7 +22,7 @@ class NeshanLocationService implements LocationServiceInterface
     /**
      * Creates a request for the Neshan API based on provided details.
      *
-     * @param string $api Name of the Neshan API (e.g., "search")
+     * @param string $api Name of the Neshan API
      * @param string $term Search term
      * @param float|null $lat Latitude
      * @param float|null $lng Longitude
@@ -99,7 +99,7 @@ class NeshanLocationService implements LocationServiceInterface
         } catch (ClientException $e) {
             $response = $e->getResponse();
             $responseData = json_decode($response->getBody()->getContents(), true);
-            throw new ApiException($responseData['message'], $responseData['status'] ?? $responseData['code']);
+            throw new ApiException($responseData['message'], $responseData['code'] ?? 500);
         } catch (Exception $e) {
             throw new RuntimeException('An unexpected error has occurred' . $e->getMessage());
         }

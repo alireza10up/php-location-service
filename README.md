@@ -5,6 +5,7 @@ This repository contains a PHP service to interact with the badge API. Using thi
 * clone
 * composer i
 * cp & initial .env
+* **require php 8.2 >**
 
 # Run
 
