@@ -14,9 +14,9 @@ class NeshanLocationService implements LocationServiceInterface
 {
     private ?array $config;
 
-    public function __construct(Config $config)
+    public function __construct()
     {
-        $this->config = $config::get('servicesLocation');
+        $this->config = Config::get('servicesLocation');
     }
 
     /**

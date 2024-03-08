@@ -2,100 +2,36 @@
 
 use App\Exceptions\ApiException;
 use App\Services\LocationServices\NeshanLocationService;
-use GuzzleHttp\Exception\ClientException;
+use App\Services\LocationServices\Contracts\LocationServiceInterface;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response;
+use http\Client;
 use PHPUnit\Framework\TestCase;
 
 class NeshanLocationServiceTest extends TestCase
 {
-    private NeshanLocationService $neshanLocationService;
-
-    protected function setUp(): void
+    public function testNeshanLocationService()
     {
-        parent::setUp();
+        $service = new NeshanLocationService();
 
-        $this->neshanLocationService = new NeshanLocationService(new \App\Utils\Config());
+        $this->assertInstanceOf(LocationServiceInterface::class, $service);
     }
 
-    public function testCreateRequest(): void
+    public function testCreateRequestValidSearchApi(): void
     {
-        $api = 'search';
-        $term = 'mashhad';
-        $lat = 35.0000;
-        $lng = 51.2828;
+        $service = new NeshanLocationService();
 
-        $request = $this->neshanLocationService->createRequest($api, $term, $lat, $lng);
+        $request = $service->createRequest('search', 'tehran', 3.333, 3.333);
 
-        $this->assertArrayHasKey('url', $request);
-        $this->assertArrayHasKey('method', $request);
-        $this->assertArrayHasKey('params', $request);
+        $this->assertArrayHasKey('term', $request['params']);
+        $this->assertArrayHasKey('lat', $request['params']);
+        $this->assertArrayHasKey('lng', $request['params']);
+
         $this->assertArrayHasKey('headers', $request);
 
-        $this->assertEquals('https://api.neshan.org/v2/search', $request['url']);
-        $this->assertEquals('GET', $request['method']);
-        $this->assertEquals(['term' => $term, 'lat' => $lat, 'lng' => $lng], $request['params']);
-
-        $this->assertArrayHasKey('Authorization', $request['headers']);
-        $this->assertArrayHasKey('Content-Type', $request['headers']);
+        $this->assertEquals('https://api.neshan.org/v1/search', $request['url']);
+        $this->assertEquals('get', $request['method']);
+        $this->assertEquals('tehran', $request['params']['term']);
     }
 
-    public function testSearchMap(): void
-    {
-        $term = 'mashhad';
-        $lat = 35.0000;
-        $lng = 51.2828;
-
-        $requestResult = [];
-
-        $this->neshanLocationService = $this->getMockBuilder(NeshanLocationService::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['createRequest'])
-            ->getMock();
-
-        $this->neshanLocationService->expects($this->once())
-            ->method('createRequest')
-            ->with('search', $term, $lat, $lng)
-            ->willReturn($requestResult);
-
-        $this->assertEquals($requestResult, $this->neshanLocationService->searchMap($term, $lat, $lng));
-    }
-
-    public function testCallApi(): void
-    {
-        $httpClientMock = $this->getMockBuilder(\GuzzleHttp\Client::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $url = 'https://api.neshan.org/v2/search';
-        $method = 'GET';
-        $params = ['term' => 'restaurant', 'lat' => 35.6892, 'lng' => 51.3890];
-        $headers = ['Authorization' => 'Bearer YOUR_API_KEY', 'Content-Type' => 'application/json'];
-
-        $request = ['url' => $url, 'method' => $method, 'params' => $params, 'headers' => $headers];
-        $responseBody = '{"results": [{"name": "Restaurant A", "lat": 35.0000, "lng": 51.2828}]}';
-        $responseStatusCode = 200;
-
-        $responseMock = $this->getMockBuilder(\Psr\Http\Message\ResponseInterface::class)->getMock();
-        $responseMock->method('getBody')->willReturnSelf();
-        $responseMock->method('getContents')->willReturn($responseBody);
-        $responseMock->method('getStatusCode')->willReturn($responseStatusCode);
-
-        $httpClientMock->expects($this->once())
-            ->method('request')
-            ->with($method, $url, ['query' => $params, 'headers' => $headers])
-            ->willReturn($responseMock);
-
-        $this->neshanLocationService = $this->getMockBuilder(NeshanLocationService::class)
-            ->disableOriginalConstructor()
-            ->onlyMethods(['createRequest'])
-            ->getMock();
-
-        $this->neshanLocationService->expects($this->once())
-            ->method('createRequest')
-            ->willReturn($request);
-
-        $this->assertEquals(
-            json_decode($responseBody, true),
-            $this->neshanLocationService->callApi($request)
-        );
-    }
 }

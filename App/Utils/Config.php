@@ -10,9 +10,7 @@ class Config
     {
         $filePath = realpath(BASE_PATH . "/configs/" . $filename . ".php");
 
-        if (!$filePath) {
-            throw new ConfigFileNotFoundException();
-        }
+        if (!$filePath) throw new ConfigFileNotFoundException();
 
         return require $filePath;
     }

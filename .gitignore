@@ -3,3 +3,6 @@
 vendor/
 vendor/*
 .env
+.phpunit.result.cache
+.phpunit.cache/
+phpunit.xml.bak

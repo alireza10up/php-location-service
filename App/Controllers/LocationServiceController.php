@@ -33,7 +33,7 @@ class LocationServiceController extends AbstractBaseController
             $lng = $request->lng;
             $lat = $request->lat;
 
-            $locationProvider = new NeshanLocationService(new Config());
+            $locationProvider = new NeshanLocationService();
 
             $result = $locationProvider->searchMap($term, $lat, $lng);
 
